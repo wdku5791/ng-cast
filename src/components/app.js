@@ -18,6 +18,7 @@ angular.module('video-player')
     controllerAs: 'ctrl',
     bindToController: true,
     controller: function($scope, youTube) {
+      // console.log($http);
       // $scope.ctrl.selectVideo = function() {return 'bbb'};
       // console.log('child?');
       this.videos = exampleVideoData;
@@ -32,7 +33,11 @@ angular.module('video-player')
       this.searchResults = function() {
 
       };
-      youTube.search('hi', function() {});
+
+      youTube.search('cat', function(videoData) {
+        this.videos = videoData;
+        this.currentVideo = videoData[0];
+      }.bind(this));
       // console.log($scope);
     },
     templateUrl: 'src/templates/app.html'
