@@ -9,7 +9,7 @@ describe('search', function() {
   beforeEach(inject(function($rootScope, $compile, youTube) {
     resultSpy = sinon.spy();
     scope = $rootScope.$new();
-    console.log(1, youTube.search);
+    
     youTubeSearchMock = sinon.spy(function(string, callback) {
       callback(fakeVideoData);
     });

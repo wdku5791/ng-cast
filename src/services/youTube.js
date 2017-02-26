@@ -1,12 +1,9 @@
 angular.module('video-player')
 .service('youTube', function($http) {
-  // TODO
-  this.search = function(str, callback) {
-    // callback(videoData);
-    // console.log(window.YOUTUBE_API_KEY);
-    console.log('get called');
 
-    return $http ({
+  this.search = function(str, callback) {
+
+    return $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',
       params: {
@@ -18,14 +15,8 @@ angular.module('video-player')
         type: 'video'
       }
     }).then(function successCallback(response) {
-      // console.log(response);
-        // this callback will be called asynchronously
-
       callback(response.data.items);
-        // when the response is available
     }, function errorCallback(response) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
     });
   };
 });

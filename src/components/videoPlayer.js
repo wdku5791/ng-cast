@@ -1,5 +1,7 @@
 angular.module('video-player')
+.controller('VideoPlayerController', function() {
 
+})
 .directive('videoPlayer', function() {
   return {
     scope: {
@@ -7,9 +9,7 @@ angular.module('video-player')
     },
     controllerAs: 'ctrl',
     bindToController: true,
-    controller: function($scope) {
-
-    },
+    controller: 'VideoPlayerController',
     templateUrl: 'src/templates/videoPlayer.html'
   };
 });

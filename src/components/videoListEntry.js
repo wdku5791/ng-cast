@@ -1,7 +1,9 @@
 angular.module('video-player')
+.controller('VideoListEntryController', function() {
+
+})
 .directive('videoListEntry', function() {
   return {
-    // TODO
     scope: {
       video: '<',
       onClick: '<',
@@ -9,10 +11,7 @@ angular.module('video-player')
     },
     controllerAs: 'ctrl',
     bindToController: true,
-    controller: function($scope) {
-      // console.log('in videoListEntry');
-      // console.log($scope);
-    },
+    controller: 'VideoListEntryController',
     templateUrl: 'src/templates/videoListEntry.html'
   };
 });
