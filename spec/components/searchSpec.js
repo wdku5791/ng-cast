@@ -9,16 +9,14 @@ describe('search', function() {
   beforeEach(inject(function($rootScope, $compile, youTube) {
     resultSpy = sinon.spy();
     scope = $rootScope.$new();
-
+    console.log(1, youTube.search);
     youTubeSearchMock = sinon.spy(function(string, callback) {
       callback(fakeVideoData);
     });
 
     youTube.search = youTubeSearchMock;
-
     scope.service = youTube;
     scope.result = resultSpy;
-
 
     element = angular.element('<search data-service="service" data-result="result"></search>');
     element = $compile(element)(scope);
